@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/baileybug/barmeli-palindrome/issues"
   },
-  "homepage": "https://github.com/baileybug/barmeli-palindrome#readme"
+  "homepage": "https://github.com/baileybug/barmeli-palindrome#readme",
+  "directories": {
+    "test": "test"
+  }
 }

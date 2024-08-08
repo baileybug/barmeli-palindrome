@@ -1,4 +1,4 @@
-let assert = require("asset");
+let assert = require("assert");
 let Phrase = require("../index.js");
 
 describe("Phrase", function() {
@@ -12,7 +12,24 @@ describe("Phrase", function() {
 
         it("should return true for a plain palindrome", function() {
             let plainPalindrome = new Phrase("racecar");
-            assert(plainPlaindrome.palindrome());
+            assert(plainPalindrome.palindrome());
+        });
+
+        it("should return true for a mixed-case palindrome", function() {
+            let mixedCase = new Phrase("Racecar");
+            assert(mixedCase.palindrome());
+        });
+
+        it("should return true for a palindrome with punctuation", function() {
+            let punctuatedPalindrome = new Phrase("Madam, I'm Adam.");
+            assert(punctuatedPalindrome.palindrome());
+        });
+        
+        describe("#letters", function() {
+            it("should return only letters", function() {
+                let punctuatedPalindrome = new Phrase("Madam, I'm Adam");
+                assert.strictEqual(punctuatedPalindrome.letters(), "MadamImAdam");
+            });
         });
     });
 });
